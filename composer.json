@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "": "vendor\\ebertzgabriel\\php-classes\\src"
+            "Extras\\": "vendor\\ebertzgabriel\\php-classes\\src"
         }
     }
 }
