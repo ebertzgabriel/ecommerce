@@ -1,22 +1,28 @@
 <?php 
 
+// composer
 require_once("vendor/autoload.php");
 
+// namespaces
+use \Slim\Slim;
+USE \Extras\Page;
+
+// Slim Framework usando as rotas
 $app = new \Slim\Slim();
 
 $app->config('debug', true);
 
+// Slim, quando for o index
 $app->get('/', function() {
     
-	$sql = new Extras\DB\Sql();
+	$page = new Page();
 
-	$res = $sql->select("SELECT * FROM tb_users");
-
-
-	echo json_encode($res);
+	$page->setTpl("index");
 
 });
 
+
+// Rodando o slim
 $app->run();
 
 ?>
